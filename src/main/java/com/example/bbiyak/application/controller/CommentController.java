@@ -1,0 +1,28 @@
+package com.example.bbiyak.application.controller;
+
+import com.example.bbiyak.application.request.CommentRequest;
+import com.example.bbiyak.domain.service.CommentService;
+import io.swagger.annotations.ApiOperation;
+import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.*;
+
+@RestController
+@RequestMapping("/api/comments")
+@RequiredArgsConstructor
+public class CommentController {
+
+    private final CommentService commentService;
+
+    @ApiOperation("댓글 등록")
+    @PostMapping()
+    @ResponseStatus(HttpStatus.CREATED)
+    public void insertComment(
+           // 내용 파라미터로 받아야 함. 한번에 받기 위해서?
+           @RequestBody CommentRequest commentRequest
+    ){
+        commentService.insertComment(commentRequest);
+    }
+
+
+}
