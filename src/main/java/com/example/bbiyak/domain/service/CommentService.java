@@ -28,4 +28,8 @@ public class CommentService {
             comment.setRating(updateCommentRequest.getRating());
             commentRepository.save(comment);
     }
+
+    public void deleteComment(int commentNo){
+        commentRepository.deleteById(commentNo);
+    }
 }

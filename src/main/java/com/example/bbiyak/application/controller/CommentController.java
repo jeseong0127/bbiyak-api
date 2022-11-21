@@ -35,5 +35,13 @@ public class CommentController {
         commentService.updateComment(updateCommentRequest);
     }
 
+    @ApiOperation("댓글 삭제하기")
+    @DeleteMapping()
+    @ResponseStatus(HttpStatus.OK)
+    public void deleteComment(
+            @RequestParam int commentNo
+    ){
+        commentService.deleteComment(commentNo);
+    }
 
 }
