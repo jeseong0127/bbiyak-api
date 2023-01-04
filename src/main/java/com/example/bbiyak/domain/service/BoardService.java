@@ -2,7 +2,7 @@ package com.example.bbiyak.domain.service;
 
 import com.example.bbiyak.application.request.NoticeRequest;
 import com.example.bbiyak.application.request.UpdateNoticeRequest;
-import com.example.bbiyak.domain.exception.BoardNotFoundException;
+import com.example.bbiyak.domain.exception.board.BoardNotFoundException;
 import com.example.bbiyak.domain.model.dto.GetNoticeDto;
 import com.example.bbiyak.domain.model.entity.Board;
 import com.example.bbiyak.domain.model.repository.BoardRepository;

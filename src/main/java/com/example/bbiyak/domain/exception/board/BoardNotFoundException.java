@@ -1,4 +1,4 @@
-package com.example.bbiyak.domain.exception;
+package com.example.bbiyak.domain.exception.board;
 
 public class BoardNotFoundException extends RuntimeException{
     public BoardNotFoundException(){
