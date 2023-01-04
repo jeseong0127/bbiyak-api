@@ -6,6 +6,9 @@ import lombok.Setter;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 @Entity
 @Table
@@ -25,6 +28,8 @@ public class User {
 
     private String userPhone;
 
+    private String userRole;
+
     private char userYn;
 
     private LocalDateTime userRegDate;
@@ -33,12 +38,21 @@ public class User {
 
     private LocalDateTime userDelDate;
 
-    public User(String userId, String userPw, String userName, String userPhone) {
+    public User(String userId, String userPw, String userName, String userPhone, String userRole) {
         this.userId = userId;
         this.userPw = userPw;
         this.userName = userName;
         this.userPhone = userPhone;
+        this.userRole = userRole;
         this.userRegDate = LocalDateTime.now();
         this.userYn = 'Y';
+    }
+
+    // ENUM으로 안하고 ,로 해서 구분해서 ROLE을 입력 -> 그걸 파싱!!
+    public List<String> getRoleList(){
+        if(this.userRole.length() > 0){
+            return Arrays.asList(this.userRole.split(","));
+        }
+        return new ArrayList<>();
     }
 }

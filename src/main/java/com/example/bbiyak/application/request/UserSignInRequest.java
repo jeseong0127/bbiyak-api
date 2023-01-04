@@ -1,25 +1,17 @@
 package com.example.bbiyak.application.request;
 
+import lombok.Generated;
 import lombok.Getter;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 
 @RequiredArgsConstructor
 @Getter
-public class UserRequest {
+public class UserSignInRequest {
     @NonNull
     private String userId;
 
     @NonNull
     private String userPw;
-
-    @NonNull
-    private String userName;
-
-    @NonNull
-    private String userRole;
-
-    @NonNull
-    private String userPhone;
 
 }

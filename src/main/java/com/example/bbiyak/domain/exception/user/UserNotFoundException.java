@@ -1,4 +1,4 @@
-package com.example.bbiyak.domain.exception;
+package com.example.bbiyak.domain.exception.user;
 
 public class UserNotFoundException extends RuntimeException {
     public UserNotFoundException() {
